@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--[if IE 7 ]><html lang="en" class="ie7 no-js"><![endif]-->
+<!--[if IE 8 ]><html lang="en" class="ie8 no-js"><![endif]-->
+<!--[if IE 9 ]><html lang="en" class="ie9 no-js"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="en" class="no-js"><!--<![endif]-->
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="description" content="" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<meta property="og:site_name" content="" />
+		<meta property="og:title" content="" />
+		<meta property="og:description" content="" />
+		<meta property="og:url" content="" />
+		<meta property="og:image" content="" />
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="en_US" />
+
+		<title></title>
+
+	
+	</head>
+	<body>
+		<!-- BEGIN: section-main -->
+		<div id="section-main">
+			<noscript>
+				<p>Javascript is currently disabled. Please <a href="http://www.google.com/support/bin/answer.py?answer=23852" target="_blank">enable javascript</a> for the optimal experience!</p>
+			</noscript>
+
+			<div id="header-global"></div>
+
+			<div id="section-content"></div>
+
+			<div id="footer-global"></div>
+
+		</div>
+		<script>
+			var Dogs = (function(){
+			
+				
+				var Canine = function(){
+					this.type = 'toothless';
+					console.log(this);
+				
+				};
+				
+						
+				Canine.prototype.bite = function (){ console.log('this is a '+this.type+'bite')}; 
+				Canine.prototype.bark = function (){
+						console.log(this.type + " bark!");
+					}
+				var Dog = function (type){
+					this.type = type || 'small but annoying';
+				};
+				
+				Dog.prototype= new Canine(); // Example of polymorphism and inheritence 
+				
+				var Spot = new Dog('spots drooling'); // Spot is an instance of Dog. Spot is a new object. New creates base template for object.
+ 				var Rufus = new Dog('Rufus');
+	
+				return {
+					Mutt: new Canine(),
+					Spot:Spot,
+					Rufus:Rufus
+				} // reveling module pattern
+				
+			Spot.bark();
+			Rufus.bark();
+			Mutt.bark();
+				
+			})();
+			
+	
+		
+		</script>
+		<!-- END:Templates -->
+
+	</body>
+</html>
